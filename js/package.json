@@ -1,0 +1,28 @@
+{
+  "name": "twitter-sn",
+  "version": "1.0.0",
+  "description": "The main goal is to get Senegalese account profile picture then apply some deep learning to classify a person from that nationality or not",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bcdbuddy/twitter-sn.git"
+  },
+  "keywords": [
+    "twitter",
+    "neo4j",
+    "deep",
+    "learning"
+  ],
+  "author": "Babacar Cissé DIA <babacarcissedia@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcdbuddy/twitter-sn/issues"
+  },
+  "homepage": "https://github.com/bcdbuddy/twitter-sn#readme",
+  "dependencies": {
+    "neo4j-driver": "^1.7.5"
+  }
+}
