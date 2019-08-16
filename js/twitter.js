@@ -1,6 +1,10 @@
 // npm install --save neo4j-driver
 var neo4j = require('neo4j-driver').v1;
-var driver = neo4j.driver('bolt://34.203.33.130:36490', neo4j.auth.basic('neo4j', 'example-sheets-spool'));
+var dotenv = require('dotenv')
+dotenv.config()
+var [protocol, host, port, user, password] = [process.env.DATABASE_PROTOCOL, process.env.DATABASE_HOST, process.env.DATABASE_PORT, process.env.DATABASE_USER, process.env.DATABASE_PASSWORD]
+var driver = neo4j.driver(`${protocol}://${host}:${port}`, neo4j.auth.basic(user, password));
+
 
 
 // Most influential followers
@@ -17,7 +21,7 @@ let session = driver.session();
 
 session.run(query, params)
   .then(function(result) {
-    result.records.forEach(function(record)
+    result.records.forEach(function(record) {
       console.log(record.get('user') + ": " + record.get('followers').toInt());
     })
   })
